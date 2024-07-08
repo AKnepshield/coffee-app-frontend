@@ -14,7 +14,6 @@ async function getUsers() {
 
 export default async function Home() {
   const users = await getUsers();
-  console.log(users);
 
   return (
       <main className="flex min-h-screen flex-col items-center justify-between p-24">
