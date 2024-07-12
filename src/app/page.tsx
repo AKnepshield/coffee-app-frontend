@@ -1,5 +1,21 @@
 import Image from "next/image";
 
+async function getUsers() {
+  const users = await fetch("http://127.0.0.1:8000/users");
+
+  if (!users.ok) {
+    throw new Error("Failed to fetch users");
+  }
+}
+
+async function getCoffeeShops() {
+  const response = await fetch("http://127.0.0.1:8000/coffee_shops");
+
+  if (!response.ok) {
+    throw new Error("Failed to fetch coffee shops");
+  }
+}
+
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
